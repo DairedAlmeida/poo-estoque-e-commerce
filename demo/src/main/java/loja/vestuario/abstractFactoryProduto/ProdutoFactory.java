@@ -1,10 +1,8 @@
 package loja.vestuario.abstractFactoryProduto;
 public interface ProdutoFactory {
 
-	public Produto criarRoupa();
-
-	public Produto criarCalca();
-
-	public Produto criarCalcado();
+	public abstract Produto criarRoupa();
+	public abstract Produto criarCalca();
+	public abstract Produto criarCalcado();
 
 }

@@ -1,7 +1,7 @@
 package loja.vestuario.item;
-import loja.example.pessoa.Cliente;
+import loja.vestuario.pessoa.Cliente;
 
-public class ItemPedido extends __abstract__ Item {
+public class ItemPedido extends Item {
 
 	private Cliente cliente;
 

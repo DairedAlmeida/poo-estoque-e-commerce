@@ -3,9 +3,7 @@ package loja.vestuario.pessoa;
 public abstract class Pessoa {
 
 	protected String nome;
-
 	protected String cpf;
-
 	protected String email;
 
 	public String getNome() {

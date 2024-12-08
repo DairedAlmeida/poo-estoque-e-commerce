@@ -1,56 +1,47 @@
 package loja.vestuario.abstractFactoryProduto.produtoEsportivo;
-import loja.vestuario.abstractFactoryProduto.Produto;
 
-public class CalcadoEsportiva extends Produto implements ProdutoEsportivo {
+public class CalcadoEsportiva extends ProdutoEsportivo {
 
-	private String estilo;
-
-	private String material;
-
-	private int escalaResistencia;
-
-	private int escalaElasticidade;
-
-	private String tecnologia;
-
-	public String getEstilo() {
-		return null;
+	private boolean solaAntiderrapante;
+	private boolean amortecimento;
+	private boolean suporteExtra;
+	
+	public CalcadoEsportiva(int id, String nome, String material, String escalaConforto,
+			int escalaResistencia, int escalaElasticidade, String tecnologia, boolean solaAntiderrapante,
+			boolean amortecimento, boolean suporteExtra) {
+		super(id, nome, material, escalaConforto, escalaResistencia, escalaElasticidade, tecnologia);
+		this.solaAntiderrapante = solaAntiderrapante;
+		this.amortecimento = amortecimento;
+		this.suporteExtra = suporteExtra;
 	}
 
-	public String getMaterial() {
-		return null;
+	public boolean isSolaAntiderrapante() {
+		return solaAntiderrapante;
 	}
 
-	public int getEscalaResistencia() {
-		return 0;
+	public void setSolaAntiderrapante(boolean solaAntiderrapante) {
+		this.solaAntiderrapante = solaAntiderrapante;
 	}
 
-	public boolean getEscalaElasticidade() {
-		return false;
+	public boolean isAmortecimento() {
+		return amortecimento;
 	}
 
-	public String getTecnologia() {
-		return null;
+	public void setAmortecimento(boolean amortecimento) {
+		this.amortecimento = amortecimento;
+	}
+
+	public boolean isSuporteExtra() {
+		return suporteExtra;
+	}
+
+	public void setSuporteExtra(boolean suporteExtra) {
+		this.suporteExtra = suporteExtra;
 	}
 
 	public String descricao() {
-		return null;
+		return "CalcadoEsportiva [solaAntiderrapante=" + solaAntiderrapante + ", amortecimento=" + amortecimento
+				+ ", suporteExtra=" + suporteExtra + ", descricaoProdutoEsportivo()=" + descricaoProdutoEsportivo()
+				+ "]";
 	}
-
-
-	/**
-	 * @see ProdutoEsportivo#getCategoria()
-	 */
-	public String getCategoria() {
-		return null;
-	}
-
-
-	/**
-	 * @see ProdutoEsportivo#getEscalaConforto()
-	 */
-	public int getEscalaConforto() {
-		return 0;
-	}
-
 }

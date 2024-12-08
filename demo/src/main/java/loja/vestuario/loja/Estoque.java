@@ -1,9 +1,14 @@
 package loja.vestuario.loja;
-import java.util.List;
+import java.util.ArrayList;
 import loja.vestuario.item.ItemEstoque;
 
 public class Estoque {
 
-	private List<ItemEstoque> listaItemEstoque;
+	private ArrayList<ItemEstoque> listaItemEstoque;
+	private ArrayList<ItemEstoque> listaItemEstoqueBaixo;
+
+	void updatePublisher(){
+
+	}
 
 }

@@ -1,56 +1,36 @@
 package loja.vestuario.abstractFactoryProduto.produtoEsportivo;
-import loja.vestuario.abstractFactoryProduto.Produto;
 
-public class RoupaEsportiva extends Produto implements ProdutoEsportivo {
+public class RoupaEsportiva extends ProdutoEsportivo {
 
-	private String estilo;
+	private String antibacteriana;
+	private String levezaFlexibilidade;
 
-	private String material;
-
-	private int escalaResistencia;
-
-	private int escalaElasticidade;
-
-	private String tecnologia;
-
-	public String getEstilo() {
-		return null;
+	public RoupaEsportiva(int id, String nome, String material, String escalaConforto,
+			int escalaResistencia, int escalaElasticidade, String tecnologia, String antibacteriana,
+			String levezaFlexibilidade) {
+		super(id, nome, material, escalaConforto, escalaResistencia, escalaElasticidade, tecnologia);
+		this.antibacteriana = antibacteriana;
+		this.levezaFlexibilidade = levezaFlexibilidade;
 	}
 
-	public String getMaterial() {
-		return null;
+	public String getAntibacteriana() {
+		return antibacteriana;
 	}
 
-	public int getEscalaResistencia() {
-		return 0;
+	public void setAntibacteriana(String antibacteriana) {
+		this.antibacteriana = antibacteriana;
 	}
 
-	public boolean getEscalaElasticidade() {
-		return false;
+	public String getLevezaFlexibilidade() {
+		return levezaFlexibilidade;
 	}
 
-	public String getTecnologia() {
-		return null;
+	public void setLevezaFlexibilidade(String levezaFlexibilidade) {
+		this.levezaFlexibilidade = levezaFlexibilidade;
 	}
 
 	public String descricao() {
-		return null;
+		return "RoupaEsportiva [antibacteriana=" + antibacteriana + ", levezaFlexibilidade=" + levezaFlexibilidade
+				+ ", descricaoProdutoEsportivo()=" + descricaoProdutoEsportivo() + "]";
 	}
-
-
-	/**
-	 * @see ProdutoEsportivo#getCategoria()
-	 */
-	public String getCategoria() {
-		return null;
-	}
-
-
-	/**
-	 * @see ProdutoEsportivo#getEscalaConforto()
-	 */
-	public int getEscalaConforto() {
-		return 0;
-	}
-
 }

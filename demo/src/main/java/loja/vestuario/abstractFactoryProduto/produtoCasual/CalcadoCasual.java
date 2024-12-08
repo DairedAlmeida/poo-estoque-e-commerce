@@ -1,36 +1,35 @@
 package loja.vestuario.abstractFactoryProduto.produtoCasual;
-import loja.vestuario.abstractFactoryProduto.Produto;
 
-public class CalcadoCasual extends Produto implements ProdutoCasual {
+public class CalcadoCasual extends ProdutoCasual {
 
-	private String estilo;
+	private String tipoFechamento;
+	private String alturaCano;
 
-	private String material;
-
-	private int escalaConforto;
-
-	public String getEstilo() {
-		return null;
+	public CalcadoCasual(int id, String nome, String material, String escalaConforto, String estilo,
+			boolean temEstampa, String tipoFechamento, String alturaCano) {
+		super(id, nome, material, escalaConforto, estilo, temEstampa);
+		this.tipoFechamento = tipoFechamento;
+		this.alturaCano = alturaCano;
 	}
 
-	public String getMaterial() {
-		return null;
+	public String getTipoFechamento() {
+		return tipoFechamento;
 	}
 
-	public int getEscalaConforto() {
-		return 0;
+	public void setTipoFechamento(String tipoFechamento) {
+		this.tipoFechamento = tipoFechamento;
+	}
+
+	public String getAlturaCano() {
+		return alturaCano;
+	}
+
+	public void setAlturaCano(String alturaCano) {
+		this.alturaCano = alturaCano;
 	}
 
 	public String descricao() {
-		return null;
-	}
-
-
-	/**
-	 * @see ProdutoCasual#getCategoria()
-	 */
-	public String getCategoria() {
-		return null;
-	}
-
+		return "CalcadoCasual [tipoFechamento=" + tipoFechamento + ", alturaCano=" + alturaCano
+				+ ", descricaoProdutoCasual()=" + descricaoProdutoCasual() + "]";
+	}	
 }

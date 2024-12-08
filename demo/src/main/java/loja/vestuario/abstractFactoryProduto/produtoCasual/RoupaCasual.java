@@ -1,38 +1,36 @@
 package loja.vestuario.abstractFactoryProduto.produtoCasual;
-import loja.vestuario.abstractFactoryProduto.Produto;
 
-public class RoupaCasual extends Produto implements ProdutoCasual {
-	private String estilo;
-	private String material;
-	private int escalaConforto;
-	private boolean prega;
+public class RoupaCasual extends ProdutoCasual {
+	private String tipoManga;
+	private String gola;
 
-	public String getEstilo() {
-		return null;
+	public RoupaCasual(int id, String nome, String material, String escalaConforto, String estilo,
+			boolean temEstampa, String tipoManga, String gola) {
+		super(id, nome, material, escalaConforto, estilo, temEstampa);
+		this.tipoManga = tipoManga;
+		this.gola = gola;
 	}
 
-	public String getMaterial() {
-		return null;
+	public String getTipoManga() {
+		return tipoManga;
 	}
 
-	public int getEscalaConforto() {
-		return 0;
+	public void setTipoManga(String tipoManga) {
+		this.tipoManga = tipoManga;
 	}
 
-	public boolean isPrega() {
-		return false;
+	public String getGola() {
+		return gola;
+	}
+
+	public void setGola(String gola) {
+		this.gola = gola;
 	}
 
 	public String descricao() {
-		return null;
+		return "RoupaCasual [tipoManga=" + tipoManga + ", gola=" + gola + ", descricaoProdutoCasual()="
+				+ descricaoProdutoCasual() + "]";
 	}
 
-
-	/**
-	 * @see ProdutoCasual#getCategoria()
-	 */
-	public String getCategoria() {
-		return null;
-	}
-
+	
 }

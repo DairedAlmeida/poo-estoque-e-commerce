@@ -1,5 +1,6 @@
 package loja.vestuario.item;
-public class StateEsgotado implements __abstract__  StateItemEstoque {
+
+public class StateEsgotado extends StateItemEstoque {
 
 	public void remover() {
 
