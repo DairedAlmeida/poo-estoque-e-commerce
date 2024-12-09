@@ -1,5 +1,13 @@
 package loja.vestuario.item;
 import loja.vestuario.abstractFactoryProduto.Produto;
+import loja.vestuario.abstractFactoryProduto.produtoCasual.CalcaCasual;
+import loja.vestuario.abstractFactoryProduto.produtoCasual.CalcadoCasual;
+import loja.vestuario.abstractFactoryProduto.produtoCasual.ProdutoCasual;
+import loja.vestuario.abstractFactoryProduto.produtoCasual.RoupaCasual;
+import loja.vestuario.abstractFactoryProduto.produtoEsportivo.CalcaEsportiva;
+import loja.vestuario.abstractFactoryProduto.produtoEsportivo.CalcadoEsportiva;
+import loja.vestuario.abstractFactoryProduto.produtoEsportivo.ProdutoEsportivo;
+import loja.vestuario.abstractFactoryProduto.produtoEsportivo.RoupaEsportiva;
 import loja.vestuario.loja.Estoque;
 
 public class ItemEstoque extends Item {
@@ -19,11 +27,38 @@ public class ItemEstoque extends Item {
         this.state.setItemEstoque(this);
     }
 
-    public String getState() {
+    public StateItemEstoque getState() {
+        return state;
+    }
+
+    
+    public String getStateDescricao() {
         return state.descricao();
     }
 
 	public Estoque getEstoque() {
 		return estoque;
 	}
+
+    public String toString() {
+        Produto produto = this.getProduto();
+        String tipoProduto = "";
+
+        if (produto instanceof ProdutoCasual) {
+            tipoProduto = "Casual";
+        } else if (produto instanceof ProdutoEsportivo) {
+            tipoProduto = "Esportivo";
+        }
+
+        String tipoItem = "";
+        if (produto instanceof RoupaCasual || produto instanceof RoupaEsportiva) {
+            tipoItem = "Roupa";
+        } else if (produto instanceof CalcaCasual || produto instanceof CalcaEsportiva) {
+            tipoItem = "Calça";
+        } else if (produto instanceof CalcadoCasual || produto instanceof CalcadoEsportiva) {
+            tipoItem = "Calçado";
+        }
+
+        return produto.getId() + " - " + produto.getNome() + " (" + tipoProduto + " - " + tipoItem + ")";
+    }
 }

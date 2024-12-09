@@ -2,14 +2,16 @@ package loja.vestuario.abstractFactoryProduto;
 
 public abstract class Produto {
 
-    protected int id;
+    static private int numeroProdutos = 0;
+	private int id;
     protected String nome;
     protected String material;
     protected String escalaConforto;
     protected String categoria;
 
-    public Produto(int id, String nome, String material, String escalaConforto) {
-        this.id = id;
+    public Produto(String nome, String material, String escalaConforto) {
+        Produto.numeroProdutos++;
+        this.id = Produto.numeroProdutos;
         this.nome = nome;
         this.material = material;
         this.escalaConforto = escalaConforto;

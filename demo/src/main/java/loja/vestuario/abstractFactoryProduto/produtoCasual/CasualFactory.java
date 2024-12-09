@@ -4,18 +4,18 @@ import loja.vestuario.abstractFactoryProduto.Produto;
 //import loja.vestuario.abstractFactoryProduto.ProdutoFactory;
 //public class CasualFactory implements ProdutoFactory {
 public class CasualFactory {
-	public Produto criarRoupa(int id, String nome, String material, String escalaConforto, String estilo,
+	public Produto criarRoupa(String nome, String material, String escalaConforto, String estilo,
 			boolean temEstampa, String alturaCintura, String tipoFechamento) {
-		return new RoupaCasual(id, nome, material, escalaConforto, estilo, temEstampa, alturaCintura, tipoFechamento);
+		return new RoupaCasual(nome, material, escalaConforto, estilo, temEstampa, alturaCintura, tipoFechamento);
 	}
 
-	public Produto criarCalca(int id, String nome, String material, String escalaConforto, String estilo,
+	public Produto criarCalca(String nome, String material, String escalaConforto, String estilo,
 			boolean temEstampa, String alturaCintura, String tipoFechamento) {
-		return new CalcaCasual(id, nome, material, escalaConforto, estilo, temEstampa, alturaCintura, tipoFechamento);
+		return new CalcaCasual(nome, material, escalaConforto, estilo, temEstampa, alturaCintura, tipoFechamento);
 	}
 
-	public Produto criarCalcado(int id, String nome, String material, String escalaConforto, String estilo,
+	public Produto criarCalcado(String nome, String material, String escalaConforto, String estilo,
 			boolean temEstampa, String tipoFechamento, String alturaCano) {
-		return new CalcadoCasual(id, nome, material, escalaConforto, estilo, temEstampa, tipoFechamento, alturaCano);
+		return new CalcadoCasual(nome, material, escalaConforto, estilo, temEstampa, tipoFechamento, alturaCano);
 	}
 }

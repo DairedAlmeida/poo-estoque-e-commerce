@@ -4,9 +4,9 @@ public class RoupaCasual extends ProdutoCasual {
 	private String tipoManga;
 	private String gola;
 
-	public RoupaCasual(int id, String nome, String material, String escalaConforto, String estilo,
+	public RoupaCasual(String nome, String material, String escalaConforto, String estilo,
 			boolean temEstampa, String tipoManga, String gola) {
-		super(id, nome, material, escalaConforto, estilo, temEstampa);
+		super(nome, material, escalaConforto, estilo, temEstampa);
 		this.tipoManga = tipoManga;
 		this.gola = gola;
 	}

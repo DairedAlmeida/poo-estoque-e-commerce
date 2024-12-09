@@ -13,15 +13,27 @@ public abstract class Pessoa {
 	}
 
 	public String getNome() {
-		return null;
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
 	}
 
 	public String getCpf() {
-		return null;
+		return cpf;
+	}
+
+	public void setCpf(String cpf) {
+		this.cpf = cpf;
 	}
 
 	public String getEmail() {
-		return null;
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
 	public String descricaoPessoa() {

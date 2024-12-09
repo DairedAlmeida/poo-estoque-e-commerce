@@ -15,8 +15,15 @@ public class Administrador extends Pessoa implements Observer {
         System.out.println("[" + this.nome + "] recebeu a notícia: " + news);
     }
 
-    @Override
     public String descricao() {
         return "Administrador [matricula=" + matricula + ", descricaoPessoa()=" + descricaoPessoa() + "]";
+    }
+
+    public int getMatricula() {
+        return matricula;
+    }
+
+    public void setMatricula(int matricula) {
+        this.matricula = matricula;
     }
 }

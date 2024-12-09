@@ -5,9 +5,9 @@ public class CalcaCasual extends ProdutoCasual {
 	private String alturaCintura;
 	private String tipoFechamento;
 	
-	public CalcaCasual(int id, String nome, String material, String escalaConforto, String estilo,
+	public CalcaCasual(String nome, String material, String escalaConforto, String estilo,
 			boolean temEstampa, String alturaCintura, String tipoFechamento) {
-		super(id, nome, material, escalaConforto, estilo, temEstampa);
+		super(nome, material, escalaConforto, estilo, temEstampa);
 		this.alturaCintura = alturaCintura;
 		this.tipoFechamento = tipoFechamento;
 		this.categoria = "Casual";

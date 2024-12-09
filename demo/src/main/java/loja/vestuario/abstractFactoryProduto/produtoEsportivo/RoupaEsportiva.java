@@ -5,10 +5,10 @@ public class RoupaEsportiva extends ProdutoEsportivo {
 	private String antibacteriana;
 	private String levezaFlexibilidade;
 
-	public RoupaEsportiva(int id, String nome, String material, String escalaConforto,
+	public RoupaEsportiva(String nome, String material, String escalaConforto,
 			int escalaResistencia, int escalaElasticidade, String tecnologia, String antibacteriana,
 			String levezaFlexibilidade) {
-		super(id, nome, material, escalaConforto, escalaResistencia, escalaElasticidade, tecnologia);
+		super(nome, material, escalaConforto, escalaResistencia, escalaElasticidade, tecnologia);
 		this.antibacteriana = antibacteriana;
 		this.levezaFlexibilidade = levezaFlexibilidade;
 	}

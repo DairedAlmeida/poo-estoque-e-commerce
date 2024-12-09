@@ -4,10 +4,10 @@ public class CalcaEsportiva extends ProdutoEsportivo {
 	private String tecidoRespiravel;
 	private String ajusteFlexivel;
 
-	public CalcaEsportiva(int id, String nome, String material, String escalaConforto,
+	public CalcaEsportiva(String nome, String material, String escalaConforto,
 			int escalaResistencia, int escalaElasticidade, String tecnologia, String tecidoRespiravel,
 			String ajusteFlexivel) {
-		super(id, nome, material, escalaConforto, escalaResistencia, escalaElasticidade, tecnologia);
+		super(nome, material, escalaConforto, escalaResistencia, escalaElasticidade, tecnologia);
 		this.tecidoRespiravel = tecidoRespiravel;
 		this.ajusteFlexivel = ajusteFlexivel;
 	}

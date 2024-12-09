@@ -20,6 +20,7 @@ public class Loja {
 		this.estoque = estoque;
         this.listaClientes = new ArrayList<>();
         this.listaAdministradores = new ArrayList<>();
+        this.listaPedido = new ArrayList<>();
 	}
 
 	public static Loja getInstancia(String nome, String endereco, Estoque estoque) {

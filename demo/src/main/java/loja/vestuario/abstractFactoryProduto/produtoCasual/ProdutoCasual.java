@@ -6,9 +6,9 @@ public abstract class ProdutoCasual extends Produto{
 	protected String estilo;
 	protected boolean temEstampa;
 	
-	public ProdutoCasual(int id, String nome, String material, String escalaConforto, String estilo,
+	public ProdutoCasual(String nome, String material, String escalaConforto, String estilo,
 			boolean temEstampa) {
-		super(id, nome, material, escalaConforto);
+		super(nome, material, escalaConforto);
 		this.estilo = estilo;
 		this.temEstampa = temEstampa;
 		this.categoria = "Casual";

@@ -7,9 +7,9 @@ public abstract class ProdutoEsportivo extends Produto{
 	protected int escalaElasticidade;
 	protected String tecnologia;
 	
-	public ProdutoEsportivo(int id, String nome, String material, String escalaConforto,
+	public ProdutoEsportivo(String nome, String material, String escalaConforto,
 			int escalaResistencia, int escalaElasticidade, String tecnologia) {
-		super(id, nome, material, escalaConforto);
+		super(nome, material, escalaConforto);
 		this.escalaResistencia = escalaResistencia;
 		this.escalaElasticidade = escalaElasticidade;
 		this.tecnologia = tecnologia;
