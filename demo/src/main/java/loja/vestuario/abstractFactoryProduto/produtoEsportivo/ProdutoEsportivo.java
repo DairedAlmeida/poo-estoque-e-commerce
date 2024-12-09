@@ -44,4 +44,6 @@ public abstract class ProdutoEsportivo extends Produto{
 		return "ProdutoEsportivo [escalaResistencia=" + escalaResistencia + ", escalaElasticidade=" + escalaElasticidade
 				+ ", tecnologia=" + tecnologia + ", descricaoProduto()=" + descricaoProduto() + "]";
 	}	
+
+	public abstract String descricao();
 }

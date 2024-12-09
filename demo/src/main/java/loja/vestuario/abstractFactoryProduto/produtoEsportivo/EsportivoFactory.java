@@ -1,10 +1,9 @@
 package loja.vestuario.abstractFactoryProduto.produtoEsportivo;
 
 import loja.vestuario.abstractFactoryProduto.Produto;
-import loja.vestuario.abstractFactoryProduto.ProdutoFactory;
-
-public class EsportivoFactory implements ProdutoFactory {
-	
+//import loja.vestuario.abstractFactoryProduto.ProdutoFactory;
+//public class EsportivoFactory implements ProdutoFactory {
+public class EsportivoFactory {
 	public Produto criarRoupa(int id, String nome, String material, String escalaConforto,
 			int escalaResistencia, int escalaElasticidade, String tecnologia, String antibacteriana,
 			String levezaFlexibilidade) {

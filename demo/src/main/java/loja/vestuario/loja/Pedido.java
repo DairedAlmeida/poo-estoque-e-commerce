@@ -1,10 +1,35 @@
 package loja.vestuario.loja;
 import java.util.ArrayList;
 import loja.vestuario.item.ItemPedido;
-import loja.vestuario.pessoa.Cliente;
 
 public class Pedido {
+	private ArrayList<ItemPedido> listaItemPedido;
+    
+	public Pedido() {
+        this.listaItemPedido = new ArrayList<>();
+    }
 
-	private Cliente cliente;
-	private ArrayList<ItemPedido> listaItemProduto;
+    public void adicionarItemPedido(ItemPedido item) {
+        listaItemPedido.add(item);
+    }
+
+    public void removerItemPedido(ItemPedido item) {
+        listaItemPedido.remove(item);
+    }
+
+    public ArrayList<ItemPedido> getListalistaItemPedido() {
+        return listaItemPedido;
+    }
+
+    public String descreverPedido() {
+        StringBuilder descricao = new StringBuilder("Pedido [itens=");
+        for (ItemPedido item : listaItemPedido) {
+            descricao.append(item.descrever()).append(", ");
+        }
+        if (!listaItemPedido.isEmpty()) {
+            descricao.setLength(descricao.length() - 2);
+        }
+        descricao.append("]");
+        return descricao.toString();
+    }
 }

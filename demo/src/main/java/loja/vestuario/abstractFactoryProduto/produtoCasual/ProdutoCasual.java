@@ -3,8 +3,8 @@ import loja.vestuario.abstractFactoryProduto.Produto;
 
 public abstract class ProdutoCasual extends Produto{
 
-	private String estilo;
-	private boolean temEstampa;
+	protected String estilo;
+	protected boolean temEstampa;
 	
 	public ProdutoCasual(int id, String nome, String material, String escalaConforto, String estilo,
 			boolean temEstampa) {
@@ -34,4 +34,6 @@ public abstract class ProdutoCasual extends Produto{
 		return "ProdutoCasual [estilo=" + estilo + ", temEstampa=" + temEstampa + ", descricaoProduto()="
 				+ descricaoProduto() + "]";
 	}
+
+	public abstract String descricao();
 }

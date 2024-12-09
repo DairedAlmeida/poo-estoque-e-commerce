@@ -60,5 +60,5 @@ public abstract class Produto {
                 + ", categoria=" + categoria + "]";
     }
 
-    
+    public abstract String descricao();
 }
