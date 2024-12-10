@@ -22,4 +22,8 @@ public class Cliente extends Pessoa {
 	public String descricao() {
 		return "Cliente [idCadastro=" + idCadastro + ", descricaoPessoa()=" + descricaoPessoa() + "]";
 	}
+
+	public String toString() {
+        return "ID: " + idCadastro + " - Nome: " + nome;
+    }
 }

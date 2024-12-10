@@ -3,7 +3,7 @@ package loja.vestuario.item;
 public class StateEsgotado extends StateItemEstoque {
 
     public void remover(int quantidadeemover) {
-        System.out.println("Item não pode ser removido porque está esgotado.");
+        throw new IllegalArgumentException("Item não pode ser removido porque está esgotado.");
     }
 
     public void adicionar(int quantidadeAdicionar) {

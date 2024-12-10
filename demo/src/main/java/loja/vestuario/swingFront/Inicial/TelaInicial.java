@@ -23,7 +23,7 @@ class TelaInicial {
 
         areaCadastroPessoa.addActionListener(e -> new AreaCadastroPessoa(lojaAtual));
         areaEstoque.addActionListener(e -> new AreaEstoque(lojaAtual));
-        areaCliente.addActionListener(e -> new AreaCliente());
+        areaCliente.addActionListener(e -> new AreaCliente(lojaAtual));
 
         panel.add(areaCadastroPessoa);
         panel.add(areaEstoque);

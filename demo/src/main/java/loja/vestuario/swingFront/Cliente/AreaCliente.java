@@ -1,25 +1,22 @@
 package loja.vestuario.swingFront.Cliente;
 import javax.swing.*;
+
+import loja.vestuario.loja.Loja;
+import loja.vestuario.swingFront.CadastroPessoa.CadastrarAdministrador;
+
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 public class AreaCliente {
-    public AreaCliente() {
+    public AreaCliente(Loja lojaAtual) {
         JFrame frame = new JFrame("Área Cliente");
         frame.setSize(400, 200);
 
         JPanel panel = new JPanel();
         panel.setLayout(new GridLayout(2, 1));
 
-        JButton comprarProduto = new JButton("Comprar Produto");
-        JButton listaPedidosCliente = new JButton("Lista Pedidos Cliente");
-
-        comprarProduto.addActionListener(e -> JOptionPane.showMessageDialog(frame, "Comprar Produto: implementar lógica!"));
-        listaPedidosCliente.addActionListener(e -> JOptionPane.showMessageDialog(frame, "Lista Pedidos Cliente: implementar lógica!"));
-
-        panel.add(comprarProduto);
-        panel.add(listaPedidosCliente);
+        JButton simulacaoComprarProduto = new JButton("Simulação Comprar Produto");
+        simulacaoComprarProduto.addActionListener(e -> new SimulacaoComprarProduto(lojaAtual));
+        panel.add(simulacaoComprarProduto);
 
         frame.add(panel);
         frame.setVisible(true);
