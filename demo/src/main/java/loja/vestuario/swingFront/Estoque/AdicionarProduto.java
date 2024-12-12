@@ -42,7 +42,9 @@ class AdicionarProduto {
         JTextField materialField = new JTextField();
 
         JLabel escalaConfortoLabel = new JLabel("Escala Conforto:");
-        JTextField escalaConfortoField = new JTextField();
+        //JTextField escalaConfortoField = new JTextField();
+        String[] opcoesEscalaConforto = { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" };
+        JComboBox<String> escalaConfortoField = new JComboBox<>(opcoesEscalaConforto);
 
         JLabel quantidadeLabel = new JLabel("Quantidade:");
         JTextField quantidadeField = new JTextField();
@@ -73,7 +75,8 @@ class AdicionarProduto {
                 String categoria = (String) categoriaComboBox.getSelectedItem();
                 String nome = nomeField.getText();
                 String material = materialField.getText();
-                String escalaConforto = escalaConfortoField.getText();
+                //String escalaConforto = escalaConfortoField.getText();
+                String escalaConforto = (String) escalaConfortoField.getSelectedItem();
                 int quantidade = Integer.parseInt(quantidadeField.getText());
 
                 if (nome.isEmpty() || material.isEmpty() || escalaConforto.isEmpty() || quantidade <= 0) {
@@ -118,8 +121,10 @@ class AdicionarProduto {
                     }
                 } else if ("Esportivo".equals(tipo)) {
                     EsportivoFactory esportivoFactory = new EsportivoFactory();
-                    int escalaResistencia = Integer.parseInt(valoresAdicionais.get("Escala Resistência"));
-                    int escalaElasticidade = Integer.parseInt(valoresAdicionais.get("Escala Elasticidade"));
+                    /*int escalaResistencia = Integer.parseInt(valoresAdicionais.get("Escala Resistência"));
+                    int escalaElasticidade = Integer.parseInt(valoresAdicionais.get("Escala Elasticidade"));*/
+                    int escalaResistencia = (int) ((JComboBox<?>) camposAdicionaisMap.get("Escala Resistência")).getSelectedItem();
+                    int escalaElasticidade = (int) ((JComboBox<?>) camposAdicionaisMap.get("Escala Elasticidade")).getSelectedItem();
                     String tecnologia = valoresAdicionais.get("Tecnologia");
 
                     switch (categoria) {
@@ -194,8 +199,10 @@ class AdicionarProduto {
                 adicionarCampo("Altura do Cano", new JTextField());
             }
         } else if ("Esportivo".equals(tipo)) {
-            adicionarCampo("Escala Resistência", new JTextField());
-            adicionarCampo("Escala Elasticidade", new JTextField());
+            /*adicionarCampo("Escala Resistência", new JTextField());
+            adicionarCampo("Escala Elasticidade", new JTextField());*/
+            adicionarCampo("Escala Resistência", criarComboBoxDe1a10());
+            adicionarCampo("Escala Elasticidade", criarComboBoxDe1a10());
             adicionarCampo("Tecnologia", new JTextField());
             if ("Roupa".equals(categoria)) {
                 adicionarCampo("Antibacteriana", criarRadioButtonPanel());
@@ -235,4 +242,13 @@ class AdicionarProduto {
 
         return panel;
     }
+
+    private JComboBox<Integer> criarComboBoxDe1a10() {
+        JComboBox<Integer> comboBox = new JComboBox<>();
+        for (int i = 1; i <= 10; i++) {
+            comboBox.addItem(i);
+        }
+        return comboBox;
+    }
+    
 }

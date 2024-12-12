@@ -40,6 +40,10 @@ public class ItemEstoque extends Item {
 		return estoque;
 	}
 
+    public void notifyEsgotadoItemEstoque(){
+        estoque.notifyEsgotadoEstoque(produto.getId(), produto.getNome());
+    }
+
     public String toString() {
         Produto produto = this.getProduto();
         String tipoProduto = "";

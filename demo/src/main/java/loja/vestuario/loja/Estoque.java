@@ -2,15 +2,18 @@ package loja.vestuario.loja;
 
 import java.util.ArrayList;
 import loja.vestuario.item.ItemEstoque;
+import loja.vestuario.pessoa.Administrador;
 
-public class Estoque {
+public class Estoque implements SubscriberAdministador {
 
     private static Estoque instancia;
     private Loja loja;
     private ArrayList<ItemEstoque> listaItemEstoque;
+    private ArrayList<Administrador> observers;
 
     private Estoque() {
         this.listaItemEstoque = new ArrayList<>();
+        this.observers = new ArrayList<>();
     }
 
     public static Estoque getInstancia() {
@@ -55,5 +58,25 @@ public class Estoque {
 
     public boolean contemItemEstoque(ItemEstoque itemEstoque) {
         return listaItemEstoque.contains(itemEstoque);
+    }
+
+    public void notifyEsgotadoEstoque(int idProdutoEsgotado, String nomeProdutoEsgotado) {
+        this.notifyObservers(idProdutoEsgotado, nomeProdutoEsgotado);
+    }
+
+    // Métodos de observer (assinar, cancelar assinatura e notificar)
+    public void subscribe(Administrador observer) {
+        observers.add(observer); // Adiciona um assinante
+        System.out.println("Adm adicionado " + observer.getNome());
+    }
+
+    public void unsubscribe(Administrador observer) {
+        observers.remove(observer); // Remove um assinante
+    }
+
+    public void notifyObservers(int idProdutoEsgotado, String nomeProdutoEsgotado) {
+        for (Administrador observer : observers) {
+            observer.update("O item " + idProdutoEsgotado + "-" + nomeProdutoEsgotado + " está esgotado."); 
+        }
     }
 }

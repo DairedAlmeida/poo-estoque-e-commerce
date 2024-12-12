@@ -1,13 +1,14 @@
 package loja.vestuario.item;
 import java.util.ArrayList;
+import java.util.concurrent.Flow.Subscriber;
+
 import loja.vestuario.pessoa.Administrador;
 
-public class StateDisponivel extends StateItemEstoque implements Subscriber {
+public class StateDisponivel extends StateItemEstoque{
 
-    private ArrayList<Administrador> observers;
 
     public StateDisponivel() {
-        this.observers = new ArrayList<>();
+        
     }
 
     // Método para remover a quantidade do estoque
@@ -42,28 +43,13 @@ public class StateDisponivel extends StateItemEstoque implements Subscriber {
 
     // Método para mudar o estado para Esgotado
     public void changeState() {
-        notifyObservers(); // Notifica os administradores antes de mudar o estado
         System.out.println("Mudando o estado para Esgotado.");
         itemEstoque.setState(new StateEsgotado()); // Transição para o estado de esgotado
+        itemEstoque.notifyEsgotadoItemEstoque();
     }
 
     // Descrição do estado
     public String descricao() {
         return "Disponível";
-    }
-
-    // Métodos de observer (assinar, cancelar assinatura e notificar)
-    public void subscribe(Administrador observer) {
-        observers.add(observer); // Adiciona um assinante
-    }
-
-    public void unsubscribe(Administrador observer) {
-        observers.remove(observer); // Remove um assinante
-    }
-
-    public void notifyObservers() {
-        for (Administrador observer : observers) {
-            observer.update("O item " + itemEstoque.getProduto().getNome() + " está esgotado."); 
-        }
     }
 }
