@@ -1,7 +1,9 @@
 package loja.vestuario.item;
+import java.io.Serializable;
+
 import loja.vestuario.abstractFactoryProduto.Produto;
 
-public abstract class Item {
+public abstract class Item  implements Serializable {
 	protected Produto produto;
 	protected int quantidade;
 	

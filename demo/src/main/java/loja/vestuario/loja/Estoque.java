@@ -1,10 +1,11 @@
 package loja.vestuario.loja;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import loja.vestuario.item.ItemEstoque;
 import loja.vestuario.pessoa.Administrador;
 
-public class Estoque implements SubscriberAdministador {
+public class Estoque implements SubscriberAdministador, Serializable {
 
     private static Estoque instancia;
     private Loja loja;

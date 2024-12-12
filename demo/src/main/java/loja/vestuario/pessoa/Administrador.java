@@ -1,5 +1,5 @@
 package loja.vestuario.pessoa;
-import loja.vestuario.item.StateDisponivel;
+
 import loja.vestuario.loja.Estoque;
 
 public class Administrador extends Pessoa implements Observer {
@@ -8,7 +8,6 @@ public class Administrador extends Pessoa implements Observer {
     public Administrador(String nome, String cpf, String email, int matricula) {
         super(nome, cpf, email);
         this.matricula = matricula;
-        StateDisponivel stateDisponivel = new StateDisponivel();
         Estoque.getInstancia().subscribe(this);
     }
 

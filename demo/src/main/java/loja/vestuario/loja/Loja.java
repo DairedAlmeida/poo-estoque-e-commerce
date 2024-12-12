@@ -1,11 +1,20 @@
 package loja.vestuario.loja;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 
 import loja.vestuario.pessoa.Administrador;
 import loja.vestuario.pessoa.Cliente;
 import loja.vestuario.pessoa.Pessoa;
 
-public class Loja {
+public class Loja implements Serializable {
 	public static Loja instancia;
 	private Estoque estoque;
 	private String nome;
@@ -25,9 +34,12 @@ public class Loja {
 
 	public static Loja getInstancia(String nome, String endereco, Estoque estoque) {
 		if (instancia == null) {
-			instancia = new Loja(nome, endereco, estoque);
-		}
-		return instancia;
+            if((instancia = carregarLoja()) == null){
+                instancia = new Loja(nome, endereco, estoque);
+            }
+		} 
+
+        return instancia;
 	}
 
 	public Estoque getEstoque() {
@@ -117,4 +129,34 @@ public class Loja {
         System.out.println("Pedido adicionado: " + pedido.descreverPedido());
     }
 	
+    public void salvarLoja() {
+        String diretorio = "dados";
+        String caminhoArquivo = diretorio + File.separator + "loja.dat";
+
+        try {
+            // Cria o diretório "dados" se ele não existir
+            Files.createDirectories(Paths.get(diretorio));
+
+            // Salva o objeto Loja no arquivo
+            try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(caminhoArquivo))) {
+                oos.writeObject(instancia);
+                System.out.println("Loja salva com sucesso no arquivo: " + caminhoArquivo);
+            }
+        } catch (IOException e) {
+            System.out.println("Erro ao salvar loja: " + e.getMessage());
+        }
+    }
+
+    public static Loja carregarLoja() {
+        String caminhoArquivo = "dados" + File.separator + "loja.dat";
+
+        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(caminhoArquivo))) {
+            instancia = (Loja) ois.readObject();
+            System.out.println("Loja carregada com sucesso do arquivo: " + caminhoArquivo);
+            return instancia;
+        } catch (IOException | ClassNotFoundException e) {
+            System.out.println("Erro ao carregar loja: " + e.getMessage());
+            return null;
+        }
+    }
 }

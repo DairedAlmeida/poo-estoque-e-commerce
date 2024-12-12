@@ -1,6 +1,8 @@
 package loja.vestuario.abstractFactoryProduto;
 
-public abstract class Produto {
+import java.io.Serializable;
+
+public abstract class Produto  implements Serializable {
 
     static private int numeroProdutos = 0;
 	private int id;

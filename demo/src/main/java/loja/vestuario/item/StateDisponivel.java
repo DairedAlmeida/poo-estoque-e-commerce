@@ -1,10 +1,6 @@
 package loja.vestuario.item;
-import java.util.ArrayList;
-import java.util.concurrent.Flow.Subscriber;
 
-import loja.vestuario.pessoa.Administrador;
-
-public class StateDisponivel extends StateItemEstoque{
+public class StateDisponivel extends StateItemEstoque {
 
 
     public StateDisponivel() {

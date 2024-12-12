@@ -1,8 +1,9 @@
 package loja.vestuario.loja;
+import java.io.Serializable;
 import java.util.ArrayList;
 import loja.vestuario.item.ItemPedido;
 
-public class Pedido {
+public class Pedido  implements Serializable {
 	private ArrayList<ItemPedido> listaItemPedido;
     
 	public Pedido() {

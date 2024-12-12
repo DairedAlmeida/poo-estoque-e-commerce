@@ -1,6 +1,7 @@
 package loja.vestuario.item;
+import java.io.Serializable;
 
-public abstract class StateItemEstoque {
+public abstract class StateItemEstoque  implements Serializable {
 
     protected ItemEstoque itemEstoque;
 
