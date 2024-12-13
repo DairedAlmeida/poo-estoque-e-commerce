@@ -59,6 +59,14 @@ public abstract class Produto  implements Serializable {
         this.categoria = categoria;
     }
 
+    public static int getNumeroProdutos() {
+        return numeroProdutos;
+    }
+
+    public static void setNumeroProdutos(int numeroProdutos) {
+        Produto.numeroProdutos = numeroProdutos;
+    }
+
     public String descricaoProduto() {
         return "Produto [id=" + id + ", nome=" + nome + ", material=" + material + ", escalaConforto=" + escalaConforto
                 + ", categoria=" + categoria + "]";

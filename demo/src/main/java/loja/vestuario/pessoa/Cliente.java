@@ -19,6 +19,14 @@ public class Cliente extends Pessoa {
 		this.idCadastro = idCadastro;
 	}
 
+	public static int getNumeroClientes() {
+		return numeroClientes;
+	}
+
+	public static void setNumeroClientes(int numeroClientes) {
+		Cliente.numeroClientes = numeroClientes;
+	}
+
 	public String descricao() {
 		return "Cliente [idCadastro=" + idCadastro + ", descricaoPessoa()=" + descricaoPessoa() + "]";
 	}

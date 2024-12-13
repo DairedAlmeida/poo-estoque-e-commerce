@@ -5,6 +5,7 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 
+import loja.vestuario.abstractFactoryProduto.Produto;
 import loja.vestuario.pessoa.Administrador;
 import loja.vestuario.pessoa.Cliente;
 import loja.vestuario.pessoa.Pessoa;
@@ -127,21 +128,24 @@ public class Loja implements Serializable {
         Thread thread = new Thread(() -> {
             String diretorio = "dados";
             String caminhoArquivo = diretorio + File.separator + "loja.dat";
-
+    
             try {
                 // Cria o diretório "dados" se ele não existir
                 Files.createDirectories(Paths.get(diretorio));
-
+    
                 // Salva o objeto Loja no arquivo
                 try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(caminhoArquivo))) {
                     oos.writeObject(instancia);
+                    oos.writeInt(Cliente.getNumeroClientes());
+                    oos.writeInt(Produto.getNumeroProdutos());
+                    
                     System.out.println("Loja salva com sucesso no arquivo: " + caminhoArquivo);
                 }
             } catch (IOException e) {
                 System.out.println("Erro ao salvar loja: " + e.getMessage());
             }
         });
-
+    
         thread.start();
         try {
             thread.join();
@@ -149,28 +153,30 @@ public class Loja implements Serializable {
             System.out.println("Erro ao aguardar a thread de salvamento: " + e.getMessage());
         }
     }
-
+    
     public static Loja carregarLoja() {
         String caminhoArquivo = "dados" + File.separator + "loja.dat";
-
+    
         final Loja[] lojaCarregada = {null};
         Thread thread = new Thread(() -> {
             try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(caminhoArquivo))) {
                 instancia = (Loja) ois.readObject();
+                Cliente.setNumeroClientes(ois.readInt());
+                Produto.setNumeroProdutos(ois.readInt());
                 lojaCarregada[0] = instancia;
                 System.out.println("Loja carregada com sucesso do arquivo: " + caminhoArquivo);
             } catch (IOException | ClassNotFoundException e) {
                 System.out.println("Erro ao carregar loja: " + e.getMessage());
             }
         });
-
+    
         thread.start();
         try {
             thread.join();
         } catch (InterruptedException e) {
             System.out.println("Erro ao aguardar a thread de carregamento: " + e.getMessage());
         }
-
+    
         return lojaCarregada[0];
     }
 }
