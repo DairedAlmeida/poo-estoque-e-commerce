@@ -7,7 +7,7 @@ public class StateEsgotado extends StateItemEstoque {
     }
 
     public void adicionar(int quantidadeAdicionar) {
-        itemEstoque.setQuantidade(itemEstoque.getQuantidade() - quantidadeAdicionar);
+        itemEstoque.setQuantidade(itemEstoque.getQuantidade() + quantidadeAdicionar);
 		System.out.println("Quantidade adiconada ao do estoque.");
 		this.changeState();
     }

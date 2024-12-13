@@ -1,5 +1,7 @@
 package loja.vestuario.pessoa;
 
+import javax.swing.JOptionPane;
+
 import loja.vestuario.loja.Estoque;
 
 public class Administrador extends Pessoa implements Observer {
@@ -13,6 +15,7 @@ public class Administrador extends Pessoa implements Observer {
 
     public void update(String news) {
         System.out.println(news);
+        JOptionPane.showMessageDialog(null, news, "Notificação de Estoque Aos Administrador", JOptionPane.INFORMATION_MESSAGE);
     }
 
     public String descricao() {
