@@ -83,8 +83,7 @@ class AdicionarProduto {
                     JOptionPane.showMessageDialog(frame, "Preencha todos os campos básicos corretamente.");
                     return;
                 }
-
-                // Obter valores dos campos adicionais
+                
                 Map<String, String> valoresAdicionais = new HashMap<>();
                 camposAdicionaisMap.forEach((label, component) -> {
                     if (component instanceof JTextField) {

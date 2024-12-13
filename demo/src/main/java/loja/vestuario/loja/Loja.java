@@ -130,10 +130,8 @@ public class Loja implements Serializable {
             String caminhoArquivo = diretorio + File.separator + "loja.dat";
     
             try {
-                // Cria o diretório "dados" se ele não existir
                 Files.createDirectories(Paths.get(diretorio));
     
-                // Salva o objeto Loja no arquivo
                 try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(caminhoArquivo))) {
                     oos.writeObject(instancia);
                     oos.writeInt(Cliente.getNumeroClientes());

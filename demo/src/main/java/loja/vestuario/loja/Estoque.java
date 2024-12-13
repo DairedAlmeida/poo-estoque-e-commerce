@@ -52,7 +52,7 @@ public class Estoque implements SubscriberAdministador, Serializable {
         } else {
             System.out.println("Itens no estoque:");
             for (ItemEstoque itemEstoque : listaItemEstoque) {
-                System.out.println(itemEstoque);  // Exibe o itemEstoque no formato implementado na classe ItemEstoque
+                System.out.println(itemEstoque);
             }
         }
     }
@@ -65,14 +65,13 @@ public class Estoque implements SubscriberAdministador, Serializable {
         this.notifyObservers(idProdutoEsgotado, nomeProdutoEsgotado);
     }
 
-    // Métodos de observer (assinar, cancelar assinatura e notificar)
     public void subscribe(Administrador observer) {
-        observers.add(observer); // Adiciona um assinante
-        System.out.println("Adm adicionado " + observer.getNome());
+        observers.add(observer);
+        System.out.println("Administrador adicionado " + observer.getNome());
     }
 
     public void unsubscribe(Administrador observer) {
-        observers.remove(observer); // Remove um assinante
+        observers.remove(observer);
     }
 
     public void notifyObservers(int idProdutoEsgotado, String nomeProdutoEsgotado) {

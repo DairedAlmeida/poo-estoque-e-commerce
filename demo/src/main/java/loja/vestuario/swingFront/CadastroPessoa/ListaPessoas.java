@@ -15,21 +15,17 @@ public class ListaPessoas {
         
         JFrame frame = new JFrame("Lista de Pessoas");
         frame.setSize(600, 400);
-        frame.setLayout(new BorderLayout()); // Ajuste no layout
+        frame.setLayout(new BorderLayout());
 
-        // Painel principal com dois subpainéis
         JPanel painelPrincipal = new JPanel();
         painelPrincipal.setLayout(new BoxLayout(painelPrincipal, BoxLayout.Y_AXIS));
 
-        // Criando tabelas
         JTable tabelaClientes = criarTabelaClientes(lojaAtual.getListaClientes());
         JTable tabelaAdministradores = criarTabelaAdministradores(lojaAtual.getListaAdministradores());
 
-        // Adicionando tabelas com títulos
         painelPrincipal.add(criarPainelComTabela("Clientes", tabelaClientes));
         painelPrincipal.add(criarPainelComTabela("Administradores", tabelaAdministradores));
 
-        // Adicionando painel principal ao frame
         frame.add(painelPrincipal, BorderLayout.CENTER);
 
         frame.setVisible(true);

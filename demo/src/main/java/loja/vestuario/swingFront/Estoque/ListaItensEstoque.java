@@ -21,16 +21,13 @@ public class ListaItensEstoque {
     public ListaItensEstoque(Loja lojaAtual) {
         Estoque estoqueAtual = lojaAtual.getEstoque();
 
-        // Criação do JFrame
         JFrame frame = new JFrame("Lista de Itens no Estoque");
         frame.setSize(1200, 800);
         frame.setLayout(new BorderLayout());
 
-        // Painel principal com layout de grade para exibir 6 tabelas
         JPanel painelPrincipal = new JPanel();
-        painelPrincipal.setLayout(new GridLayout(3, 2, 10, 10)); // 3 linhas, 2 colunas
+        painelPrincipal.setLayout(new GridLayout(3, 2, 10, 10));
 
-        // Criando tabelas separadas
         JTable tabelaRoupasCasual = criarTabelaRoupasCasual(estoqueAtual.getListaItemEstoque());
         JTable tabelaCalcasCasual = criarTabelaCalcasCasual(estoqueAtual.getListaItemEstoque());
         JTable tabelaCalcadosCasual = criarTabelaCalcadosCasual(estoqueAtual.getListaItemEstoque());
@@ -39,7 +36,6 @@ public class ListaItensEstoque {
         JTable tabelaCalcasEsportiva = criarTabelaCalcasEsportiva(estoqueAtual.getListaItemEstoque());
         JTable tabelaCalcadosEsportiva = criarTabelaCalcadosEsportiva(estoqueAtual.getListaItemEstoque());
 
-        // Adicionando tabelas ao painel principal
         painelPrincipal.add(criarPainelComTabela("Roupas Casuais", tabelaRoupasCasual));
         painelPrincipal.add(criarPainelComTabela("Roupas Esportivas", tabelaRoupasEsportiva));
         painelPrincipal.add(criarPainelComTabela("Calças Casuais", tabelaCalcasCasual));
@@ -47,7 +43,6 @@ public class ListaItensEstoque {
         painelPrincipal.add(criarPainelComTabela("Calçados Casuais", tabelaCalcadosCasual));
         painelPrincipal.add(criarPainelComTabela("Calçados Esportivos", tabelaCalcadosEsportiva));
 
-        // Adicionando painel principal ao frame
         frame.add(painelPrincipal, BorderLayout.CENTER);
 
         frame.setVisible(true);

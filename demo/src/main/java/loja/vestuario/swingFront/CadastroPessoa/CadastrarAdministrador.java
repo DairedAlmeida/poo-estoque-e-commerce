@@ -38,7 +38,7 @@ public class CadastrarAdministrador {
         JButton salvar = new JButton("Salvar");
         salvar.addActionListener(e -> salvarAdministrador(nomeField.getText().trim(), cpfField.getText().trim(), emailField.getText().trim(), matriculaField.getText().trim(), frame));
 
-        panel.add(new JLabel()); // Espaço vazio para alinhar o botão
+        panel.add(new JLabel());
         panel.add(salvar);
 
         frame.add(panel);
@@ -54,11 +54,9 @@ public class CadastrarAdministrador {
         try {
             int matriculaInt = Integer.parseInt(matricula);
 
-            // Cria o administrador e adiciona à loja
             Administrador administrador = new Administrador(nome, cpf, email, matriculaInt);
             this.loja.adicionarAdministrador(administrador);
 
-            // Mostra mensagem de sucesso
             JOptionPane.showMessageDialog(frame, "Administrador salvo com sucesso!");
             frame.dispose();
         } catch (NumberFormatException ex) {

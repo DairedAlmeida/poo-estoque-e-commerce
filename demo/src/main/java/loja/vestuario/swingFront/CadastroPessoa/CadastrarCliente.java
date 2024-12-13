@@ -35,7 +35,7 @@ public class CadastrarCliente {
         JButton salvar = new JButton("Salvar");
         salvar.addActionListener(e -> salvarCliente(nomeField.getText().trim(), cpfField.getText().trim(), emailField.getText().trim(), frame));
 
-        panel.add(new JLabel()); // Espaço vazio para alinhar o botão
+        panel.add(new JLabel());
         panel.add(salvar);
 
         frame.add(panel);
@@ -48,11 +48,9 @@ public class CadastrarCliente {
             return;
         }
 
-        // Cria o cliente e adiciona à loja
         Cliente cliente = new Cliente(nome, cpf, email);
         this.loja.adicionarCliente(cliente);
 
-        // Mostra mensagem de sucesso
         JOptionPane.showMessageDialog(frame, "Cliente salvo com sucesso!");
         frame.dispose();
     }

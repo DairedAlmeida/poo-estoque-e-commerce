@@ -15,7 +15,6 @@ public class TelaInicial {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(400, 300);
 
-        // Criando o menu superior
         JMenuBar menuBar = new JMenuBar();
         JMenu menuArquivo = new JMenu("Arquivo");
         JMenuItem menuSalvar = new JMenuItem("Salvar Loja");
@@ -40,7 +39,6 @@ public class TelaInicial {
         menuBar.add(menuArquivo);
         frame.setJMenuBar(menuBar);
 
-        // Criando o painel com botões
         JPanel panel = new JPanel();
         panel.setLayout(new GridLayout(3, 1));
 

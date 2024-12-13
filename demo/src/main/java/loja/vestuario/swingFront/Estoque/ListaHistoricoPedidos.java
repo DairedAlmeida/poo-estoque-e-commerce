@@ -19,15 +19,12 @@ public class ListaHistoricoPedidos {
         frame.setSize(600, 400);
         frame.setLayout(new BorderLayout());
 
-        // Criando a tabela para exibir os pedidos
         JTable tabelaPedidos = criarTabelaPedidos(lojaAtual.getListaPedido());
 
-        // Adicionando a tabela ao painel
         JPanel painel = new JPanel();
         painel.setLayout(new BorderLayout());
         painel.add(criarPainelComTabela("Pedidos", tabelaPedidos), BorderLayout.CENTER);
 
-        // Adicionando painel ao frame
         frame.add(painel, BorderLayout.CENTER);
         frame.setVisible(true);
     }
