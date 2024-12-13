@@ -5,8 +5,6 @@ import loja.vestuario.loja.Loja;
 import loja.vestuario.pessoa.Administrador;
 
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 public class CadastrarAdministrador {
 

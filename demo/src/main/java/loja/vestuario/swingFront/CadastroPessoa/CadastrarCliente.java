@@ -5,8 +5,6 @@ import loja.vestuario.loja.Loja;
 import loja.vestuario.pessoa.Cliente;
 
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 public class CadastrarCliente {
     Loja loja;

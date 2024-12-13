@@ -1,8 +1,6 @@
 package loja.vestuario.swingFront.Cliente;
 import javax.swing.*;
-
 import loja.vestuario.loja.Loja;
-import loja.vestuario.swingFront.CadastroPessoa.CadastrarAdministrador;
 
 import java.awt.*;
 
