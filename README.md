@@ -10,4 +10,4 @@ Daired Almeida Cruz N 201912945
 
 Execução Programa: Demo/scr/main(main/java/loja/vestuario)/swingFront/inicial/SistemaEstoqueSwing -> executar classe SistemaEstoqueSwing
 
-Teste: Demo/scr/test  -> executar classes de teste
+Teste: Demo/scr/test(test/java/loja/vestuario)  -> executar classes de teste
